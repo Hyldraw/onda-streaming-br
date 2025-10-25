@@ -1,7 +1,8 @@
-import Header from "@/components/Header";
+import { MobileHeader } from "@/components/MobileHeader";
 import Hero from "@/components/Hero";
 import ContentRow from "@/components/ContentRow";
 import ContentCard from "@/components/ContentCard";
+import { BottomNav } from "@/components/BottomNav";
 import content1 from "@/assets/content-1.jpg";
 import content2 from "@/assets/content-2.jpg";
 import content3 from "@/assets/content-3.jpg";
@@ -139,16 +140,16 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <div className="min-h-screen bg-background pb-20">
+      <MobileHeader />
       
-      <main className="pt-16">
+      <main className="pt-14">
         <Hero />
         
-        <div className="space-y-12 py-12">
+        <div className="space-y-8 py-8">
           <ContentRow title="Em Alta">
             {trendingContent.map((content, index) => (
-              <div key={index} className="min-w-[200px] md:min-w-[250px]">
+              <div key={index} className="min-w-[160px]">
                 <ContentCard {...content} />
               </div>
             ))}
@@ -156,7 +157,7 @@ const Index = () => {
 
           <ContentRow title="Séries Populares">
             {seriesContent.map((content, index) => (
-              <div key={index} className="min-w-[200px] md:min-w-[250px]">
+              <div key={index} className="min-w-[160px]">
                 <ContentCard {...content} />
               </div>
             ))}
@@ -164,7 +165,7 @@ const Index = () => {
 
           <ContentRow title="Filmes em Destaque">
             {moviesContent.map((content, index) => (
-              <div key={index} className="min-w-[200px] md:min-w-[250px]">
+              <div key={index} className="min-w-[160px]">
                 <ContentCard {...content} />
               </div>
             ))}
@@ -172,7 +173,7 @@ const Index = () => {
 
           <ContentRow title="Novidades da Semana">
             {trendingContent.slice().reverse().map((content, index) => (
-              <div key={index} className="min-w-[200px] md:min-w-[250px]">
+              <div key={index} className="min-w-[160px]">
                 <ContentCard {...content} />
               </div>
             ))}
@@ -180,48 +181,7 @@ const Index = () => {
         </div>
       </main>
 
-      <footer className="border-t border-border mt-20">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-            <div className="space-y-3">
-              <h3 className="font-semibold text-foreground">Navegação</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary transition-smooth">Início</a></li>
-                <li><a href="#" className="hover:text-primary transition-smooth">Séries</a></li>
-                <li><a href="#" className="hover:text-primary transition-smooth">Filmes</a></li>
-                <li><a href="#" className="hover:text-primary transition-smooth">Novidades</a></li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h3 className="font-semibold text-foreground">Ajuda</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary transition-smooth">Central de Ajuda</a></li>
-                <li><a href="#" className="hover:text-primary transition-smooth">Contato</a></li>
-                <li><a href="#" className="hover:text-primary transition-smooth">FAQ</a></li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h3 className="font-semibold text-foreground">Conta</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary transition-smooth">Minha Conta</a></li>
-                <li><a href="#" className="hover:text-primary transition-smooth">Planos</a></li>
-                <li><a href="#" className="hover:text-primary transition-smooth">Configurações</a></li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h3 className="font-semibold text-foreground">Legal</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary transition-smooth">Privacidade</a></li>
-                <li><a href="#" className="hover:text-primary transition-smooth">Termos de Uso</a></li>
-                <li><a href="#" className="hover:text-primary transition-smooth">Cookies</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="text-center text-sm text-muted-foreground">
-            <p>© 2024 StreamMax. Todos os direitos reservados.</p>
-          </div>
-        </div>
-      </footer>
+      <BottomNav />
     </div>
   );
 };

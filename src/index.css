@@ -115,4 +115,17 @@ All colors MUST be HSL.
     backdrop-filter: blur(12px) saturate(180%);
     background-color: hsl(240 10% 5% / 0.8);
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }

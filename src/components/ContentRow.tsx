@@ -27,35 +27,17 @@ const ContentRow = ({ title, children }: ContentRowProps) => {
   };
 
   return (
-    <div className="space-y-4 group/row">
-      <h2 className="text-2xl font-bold px-4 md:px-8">{title}</h2>
+    <div className="space-y-3">
+      <h2 className="text-xl font-bold px-4">{title}</h2>
       
       <div className="relative">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 h-full rounded-none bg-background/80 backdrop-blur-sm opacity-0 group-hover/row:opacity-100 transition-smooth hover:bg-background/90"
-          onClick={() => scroll("left")}
-        >
-          <ChevronLeft className="h-8 w-8" />
-        </Button>
-
         <div
           id={`row-${title}`}
-          className="flex gap-4 overflow-x-auto scrollbar-hide px-4 md:px-8 scroll-smooth"
+          className="flex gap-3 overflow-x-auto scrollbar-hide px-4 scroll-smooth snap-x snap-mandatory"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {children}
         </div>
-
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 h-full rounded-none bg-background/80 backdrop-blur-sm opacity-0 group-hover/row:opacity-100 transition-smooth hover:bg-background/90"
-          onClick={() => scroll("right")}
-        >
-          <ChevronRight className="h-8 w-8" />
-        </Button>
       </div>
     </div>
   );
