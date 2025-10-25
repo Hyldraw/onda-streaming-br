@@ -2,7 +2,7 @@ import { Home, Search, Film, User } from "lucide-react";
 
 export const BottomNav = () => {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 pb-safe px-4 pb-4">
+    <div className="fixed bottom-0 left-0 right-0 z-50 pb-safe px-4 pb-6">
       <nav className="bg-background/95 backdrop-blur-lg border border-white/10 rounded-full shadow-elegant max-w-md mx-auto">
         <div className="flex justify-around items-center h-14 px-6">
           <button className="flex flex-col items-center gap-0.5 text-primary transition-all">
